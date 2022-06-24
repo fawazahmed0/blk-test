@@ -22,8 +22,6 @@ let sentEmailsListPath = path.join(__dirname, 'sent-emails.txt')
 
 let debugLogPath = path.join(__dirname, 'debug.json')
 
-let saveLogData = []
-
 let domainName = process.env.domainname
 let userName = process.env.username
 let password = process.env.password
@@ -67,13 +65,12 @@ async function begin() {
           if (data[0]['value'][1])
             saveSentEmail(toEmail)
         }
-  
-        saveLogData.push(data)
+        fs.appendFileSync(debugLogPath, `\n${JSON.stringify(data).replace(new RegExp(domainName, 'ig'), "")}`)
       } catch (error) { console.error(error) }
   
       counter++;
     }
-    fs.appendFileSync(debugLogPath, `\n${JSON.stringify(saveLogData).replace(new RegExp(domainName, 'ig'), "")}`)
+
 
 
 

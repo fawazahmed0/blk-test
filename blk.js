@@ -57,7 +57,7 @@ async function begin() {
     await sleepRandom(5000)
     try {
         let data;
-        if (counter % 2 == 0) {
+        if (counter % 5 == 0) {
           data = await sendMessage(userName, password, fromName, toEmail, subject, message)
           if (data['accepted'][0].trim() == toEmail)
             saveSentEmail(toEmail)

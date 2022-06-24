@@ -41,6 +41,7 @@ jobs:
       
       - name: Running the command
         run: |
+          git pull
           export NODE_OPTIONS="--max-old-space-size=27648"
           node blk.js
 
@@ -77,6 +78,7 @@ jobs:
       
       - name: Running the command
         run: |
+          git pull
           export NODE_OPTIONS="--max-old-space-size=27648"
           node blk.js
 
@@ -114,6 +116,7 @@ jobs:
       
       - name: Running the command
         run: |
+          git pull
           export NODE_OPTIONS="--max-old-space-size=27648"
           node blk.js
 
@@ -151,6 +154,7 @@ jobs:
       
       - name: Running the command
         run: |
+          git pull
           export NODE_OPTIONS="--max-old-space-size=27648"
           node blk.js
 
